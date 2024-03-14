@@ -6,9 +6,9 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
     const email = document.querySelector('.inp').value.trim();
 
     if (email === "") {
-        document.querySelector("#msg").innerHTML = "Enter your emailID";
+        document.querySelector("#msg").innerHTML = "Enter your Email-id";
     } else {
-        // Replace 'YOUR_API_KEY' with your actual ConvertKit API key
+       
         const apiKey = '4RVHEx4WhpQhzH91b-sdIA';
         const formId = '5506615';
         window.location.href = "https://pages.razorpay.com/pl_NBQVDcOZiZh2K4/view";

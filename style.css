@@ -1365,7 +1365,14 @@ footer {
 .payment-bannerDesktop .slot {
   width: 25vw;
   height: 3.5vw;
-  background-color: white;
+  /* background-color: white; */
+  background-image: linear-gradient(
+    to right,
+    /* #b4c145 23%, */
+    #739e62 20%,
+    #327b80 70%
+  );
+  border: none;
   text-decoration: none;
   border-radius: 0.5vw;
   display: flex;

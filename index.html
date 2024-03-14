@@ -129,7 +129,7 @@
          
       <form id="myForm">
           <input type="email" name="email" class="inp" placeholder='Enter your Email Here.'>
-          <p id="msg" style="color: red; text-align: center;"></p>
+          <p id="msg" style="color: red; text-align: center; font-size: 1vw; font-weight: 500;"></p>
           <br><br>
           <input type="text" class="utmSourceInput" id="utmSource" name="utmSource">
           <input type="submit" id="sub" value="Submit">
@@ -588,9 +588,6 @@
             </div>
           </div>
            
-
-         
-
         </div>
         </div>
 
@@ -961,9 +958,14 @@
               document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('utmSource').value = getUTMSource();
               });
-              let form = document.querySelector("form");
+              let form = document.getElementById("myForm");
+             
               form.addEventListener('submit', (e) => {
-                  e.preventDefault();
+                  e.preventDefault();  
+                  const email = document.querySelector('.inp').value.trim();
+                  if (email === "") {
+                 document.querySelector("#msg").innerHTML = "Enter your Email-id";
+                } else {
                   let data = new FormData(form);
                   fetch('https://script.google.com/macros/s/AKfycby5b5gyX065D_d1-9wPjSScToNMMVkUHEcD-EAAijUTQqV-A1XXqCMXMLtpYs2QoFN2rw/exec', {
                           method: "POST",
@@ -973,7 +975,9 @@
                       .then(data => {
                            console.log(data);
                       });
-              })
+              }
+            })
+          
           </script>
             
           
